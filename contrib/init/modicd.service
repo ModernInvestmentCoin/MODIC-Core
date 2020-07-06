@@ -1,0 +1,26 @@
+[Unit]
+Description=ModernInvestmentCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=modic
+Group=modic
+
+Type=forking
+PIDFile=/var/lib/modicd/modicd.pid
+
+ExecStart=/usr/bin/modicd -daemon -pid=/var/lib/modicd/modicd.pid \
+          -conf=/etc/modic/modic.conf -datadir=/var/lib/modicd
+
+ExecStop=-/usr/bin/modic-cli -conf=/etc/modic/modic.conf \
+         -datadir=/var/lib/modicd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

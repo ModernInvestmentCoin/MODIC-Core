@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ModernInvestmentCoin
+Comment=ModernInvestmentCoin P2P Cryptocurrency
+Comment[fr]=ModernInvestmentCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=ModernInvestmentCoin, eşten eşe kriptografik sanal para birimi
+Exec=modic-qt %u
+Terminal=false
+Type=Application
+Icon=modic128
+MimeType=x-scheme-handler/modic;
+Categories=Office;Finance;
